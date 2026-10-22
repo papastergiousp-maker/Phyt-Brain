@@ -1,0 +1,21 @@
+{
+  "name": "Phyt AI",
+  "short_name": "PhytAI",
+  "description": "Your AI-powered agricultural assistant with weather forecasts and product analysis.",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#E2F0D9",
+  "theme_color": "#6AB04A",
+  "icons": [
+    {
+      "src": "/my-logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/my-logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
