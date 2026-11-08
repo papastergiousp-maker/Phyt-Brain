@@ -1,6 +1,8 @@
-# Phyt Brain: Disease AI Agent and Custom ERP Program
+# Phyt Brain: AI Agent for Farm Supply Stores
 
-Phyt Brain is a working prototype of an AI assistant for farmers, agronomists and agricultural supply stores in Greece. It answers questions in Greek like an experienced agronomist, diagnoses plant problems from photos, turns voice notes and photos of handwritten orders into structured orders, and runs the day to day business of a supply store (clients, products, orders, staff) in one web app.
+Phyt Brain is a working prototype of an AI assistant for farmers, agronomists and agricultural supply stores in Greece. It answers questions in Greek like an experienced agronomist, diagnoses plant problems from photos, turns voice notes and photos of handwritten orders into structured orders, and keeps simple records of a store's clients, products, orders and staff.
+
+It is not an ERP: there is no invoicing, VAT, stock or accounting. It covers the front of the process, the advice and the order, and leaves invoicing to the store's ERP.
 
 I built it to solve problems I saw first hand working in an agricultural supply store and in a subsidy (OSDE) office: farmers ask the same questions every day, orders arrive by phone and on paper, and product advice depends on who is behind the counter.
 
@@ -16,7 +18,7 @@ I built it to solve problems I saw first hand working in an agricultural supply 
 | Order from photo (`extract-order-from-image-flow`) | A photo of a handwritten or printed order becomes a structured order | OCR plus extraction into a schema |
 | Product recommendation (`product-recommendation-flow`) | Advice on a basket of selected products (compatibility, timing) | Greek prompt over the selected items |
 | Smart crop planning (`smart-crop-planning`) | Analysis of a field picked on a map: soil, climate, suitable crops | Coordinates from a map selector into a structured prompt |
-| Custom ERP screens | Clients, product catalog, orders, staff, roles and plans | Next.js pages on Firebase Auth and Firestore |
+| Order and client screens | Clients, product catalog, orders with status, staff roles and plans, packages needed from dose and area | Next.js pages, records saved in the browser (localStorage), sign in with Firebase Auth |
 
 ## Prompt engineering in this project
 
@@ -32,7 +34,7 @@ The interesting part for me is the prompt and agent design, not the UI.
 
 ## Tech stack
 
-Next.js (App Router, TypeScript), Tailwind CSS and shadcn/ui, Firebase Auth, Firestore and Storage, Google Gemini through Genkit (flows, prompts, tools), OpenWeather style weather API.
+Next.js (App Router, TypeScript), Tailwind CSS and shadcn/ui, Firebase Auth for sign in (app data is kept in the browser with Zustand and localStorage), Google Gemini through Genkit (flows, prompts, tools), OpenWeather style weather API.
 
 ## Project structure
 
