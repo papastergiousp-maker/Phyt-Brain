@@ -6,7 +6,7 @@ It is not an ERP: there is no invoicing, VAT, stock or accounting. It covers the
 
 I built it to solve problems I saw first hand working in an agricultural supply store and in a subsidy (OSDE) office: farmers ask the same questions every day, orders arrive by phone and on paper, and product advice depends on who is behind the counter.
 
-**Status:** prototype, not deployed. Built with Firebase Studio, Next.js and Google Gemini through Genkit.
+**Status:** working prototype, deployed and run online on Firebase App Hosting. Built with Firebase Studio, Next.js and Google Gemini through Genkit.
 
 ## What it does
 
@@ -35,6 +35,8 @@ The interesting part for me is the prompt and agent design, not the UI.
 ## Tech stack
 
 Next.js (App Router, TypeScript), Tailwind CSS and shadcn/ui, Firebase Auth for sign in (app data is kept in the browser with Zustand and localStorage), Google Gemini through Genkit (flows, prompts, tools), OpenWeather style weather API.
+
+Server side: Next.js server actions call the Genkit flows and the weather API, with the API keys kept on the server only and automatic retries with exponential backoff when the AI service is busy. Firestore security rules and admin actions for licenses and the product catalog (client notification emails are simulated, not sent). Deployment: Firebase App Hosting.
 
 ## Project structure
 
